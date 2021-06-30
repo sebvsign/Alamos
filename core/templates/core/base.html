@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="images/LogoMakr-4znYI5.png" />
+    <!--<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">-->
+    {% block links %}
+
+    {% endblock %}
+    
+    <link rel="stylesheet" href="{% static 'core/css/style.css'%}">
+    <title>Navegador</title>
+</head>
+<body>
+    <header style="background-image: url('{% static 'core/models/images/bg-01.jpg'%}');">
+        <nav>
+            <div class="logo">
+                
+				<img class="imagenicono" src="{% static 'core/images/LogoMakr-4znYI5.png'%} " alt="image" height="40%" width="40%">
+                <H3>Dos Alamos</H3> 	
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'reserva' %}">Reservar una Hora</a>
+                </li>
+                <li>
+                    <a href="{% url 'login_medico' %}">Acceso medico</a>
+                </li>
+                <li>
+                    <a href="{% url 'login_secretaria' %}">Acceso secretaria</a>
+                </li>
+                <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Otros Accesos</button>
+                    <div class="dropdown-content">
+                        <a href="Login.html">Acceso Medicos</a>
+                        <a href="Login secretaria.html">Secretaria</a>
+                    </div>
+                </div>
+            </li>
+                
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+            {% block reserva %}
+
+            {% endblock %}
+        
+    </header>
+    {% block contenido %}
+
+    {% endblock %}
+    <footer>
+    <div class="contenedor-footer">
+        <div class="content-foo">
+            <h4>Fono</h4>
+            <p>2-265443211</p>
+        </div>
+        <div class="content-foo">
+            <h4>Email</h4>
+            <p>dosalamos@hotmail.cl</p>
+        </div>
+        <div class="content-foo">
+            <h4>Location</h4>
+            <p>01001000 </p>
+        </div>
+    </div>
+    <h2 class="titulo-final">&copy; ---- </h2>
+  </footer>
+    <script src="{% static 'core/js/app.js'%}"></script>
+</body>
+
+</html>

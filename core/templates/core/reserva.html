@@ -1,0 +1,33 @@
+{% extends 'core/base.html'%}
+{% load static %}
+{% block links %}
+
+	<title>Acceso pacientes</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'core/css/reservav1.css'%}">
+	<link rel="shortcut icon" href="{% static 'core//images/LogoMakr-35FpyE.png'%}" />
+{% endblock %}
+
+
+{% block reserva %}
+	<section class="contenedor sobre-dosalamos">
+			<form class="formulario" id="formulario" method="POST"> 
+				<img src="{% static 'core/images/reserva.png'%}" class="imgLogo" />
+          
+                <h1 class="formulario__titulo">Reservas de</h1>
+                <h3 class="formulario__subtitulo">Horas</h3>
+                <p class="formulario__parrafo">
+                  Llena este pequeño formulario para agendar hora medica.
+                </p>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="formulario__btn"> Agregar  </button>
+			</form>
+		</section>
+	<script src="{% static 'core/js/reserva.js'%}"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+	
+{% endblock %}
